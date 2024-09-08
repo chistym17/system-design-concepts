@@ -1,0 +1,59 @@
+// Logical and Tangible entities
+
+Logical Entities
+Logical entities represent abstract concepts and roles within a system. They are concerned with the system's functionality and behavior rather than physical implementation. Logical entities are often used during the design phase to define and model the system's architecture and interactions.
+
+Examples of Logical Entities:
+User:
+Represents the roles and permissions of individuals interacting with the system.
+Includes attributes like user ID, username, and roles.
+
+Service:
+Represents a functional unit within the system, such as authentication or data processing.
+Defines operations and interactions but is not tied to a specific server or infrastructure.
+
+Data Model:
+Defines the structure of data, including entities, relationships, and constraints.
+For example, a user profile entity might include attributes like name, email, and password.
+
+Business Logic:
+Represents the rules and operations that govern how data is processed and how various components interact.
+For example, calculating discounts based on user loyalty or handling transactions.
+
+API Interface:
+Defines the methods and data formats for communication between different components or services.
+Examples include RESTful APIs or GraphQL schemas.
+
+
+Tangible Entities
+Tangible entities refer to the physical components or infrastructure that implement the logical entities. They are concrete and can be directly observed or interacted with in the real world. Tangible entities are concerned with the physical deployment and operation of the system.
+
+Examples of Tangible Entities:
+
+Server:
+Physical or virtual machines that host the application and database.
+Includes attributes like CPU, memory, and storage.
+
+Database:
+Physical or cloud-based storage systems where data is persistently stored.
+Examples include MySQL servers, MongoDB clusters, or cloud databases like Amazon RDS.
+
+Load Balancer:
+Hardware or software that distributes incoming network traffic across multiple servers.
+Helps improve performance and ensure high availability.
+
+Cache:
+In-memory data stores that speed up data retrieval.
+Examples include Redis and Memcached.
+
+Network Infrastructure:
+Includes routers, switches, and firewalls that facilitate communication between different components.
+Ensures connectivity and security within the system.
+
+Application Code:
+The actual source code that implements the logical entities and business logic.
+Stored in code repositories and executed on servers.
+
+Deployment Tools:
+Tools and platforms used for deploying and managing applications.
+Examples include Kubernetes, Docker, and CI/CD pipelines.

@@ -1,0 +1,99 @@
+A proxy is an intermediary server or service that sits between a client and another server. It forwards requests from the client to the server and can manipulate or modify these requests or responses before sending them back to the client. Proxies are used to enhance performance, security, privacy, and load management in system design.
+
+There are different types of proxies depending on their use cases. Let’s explore the main types and how they are used in system design.
+
+Types of Proxies
+Forward Proxy
+
+A forward proxy acts as an intermediary for clients seeking resources from servers. The client sends requests to the forward proxy, which then forwards these requests to the server on behalf of the client. The server sends the response back to the proxy, and the proxy passes it to the client.
+
+Use Cases:
+Privacy and Anonymity: Clients use a forward proxy to hide their IP addresses, making it harder for the destination server to track them.
+Access Control: Organizations can use proxies to filter and restrict access to certain websites or resources.
+Caching: Proxies can cache frequently requested resources to reduce latency and save bandwidth.
+Firewall Protection: By sitting between the client and the server, proxies can block requests based on security policies.
+Example:
+A user in a corporate network accesses the internet via a forward proxy. The proxy ensures only permitted websites are accessible and can log the user’s activity.
+Reverse Proxy
+
+A reverse proxy sits in front of one or more servers and handles client requests on behalf of the server(s). The client does not interact directly with the servers but instead sends requests to the reverse proxy, which then forwards them to the appropriate server.
+
+Use Cases:
+Load Balancing: A reverse proxy can distribute client requests across multiple backend servers to prevent any single server from being overwhelmed.
+Security: A reverse proxy can act as a barrier between external users and internal servers, hiding the internal server's details and protecting them from direct exposure to the internet.
+SSL Termination: Reverse proxies can manage SSL certificates and handle encryption/decryption, offloading the work from the backend servers.
+Caching: Like a forward proxy, reverse proxies can cache content to serve users faster and reduce the load on the backend servers.
+Example:
+Nginx or HAProxy: These are commonly used reverse proxies that handle requests for web applications. They can distribute incoming traffic across multiple servers, improving performance and availability.
+Transparent Proxy
+
+A transparent proxy intercepts client requests without requiring any configuration or knowledge from the client. It acts as an intermediary without altering the requests or responses in a noticeable way. Transparent proxies are typically used by ISPs or organizations to monitor and filter traffic.
+
+Use Cases:
+Content Filtering: Organizations or ISPs can use transparent proxies to block certain types of traffic, such as social media or adult content.
+Traffic Monitoring: Proxies can log and monitor internet traffic for security and compliance purposes.
+Caching: Transparent proxies can cache frequently requested content, reducing latency and improving network efficiency.
+Example:
+A school network uses a transparent proxy to restrict access to non-educational websites without requiring students to configure their browsers.
+Anonymous Proxy
+
+An anonymous proxy hides the client’s identity by not passing certain information, such as the client’s IP address, to the server. The server cannot track the origin of the client request, providing privacy to the user.
+
+Use Cases:
+Anonymity: Users can browse the web without revealing their IP addresses.
+Bypassing Geolocation Restrictions: Anonymous proxies are often used to access content restricted by geographical location, such as streaming services.
+Example:
+Proxy services like Tor can be used to route traffic through multiple proxies, ensuring anonymity.
+High Anonymity Proxy (Elite Proxy)
+
+This type of proxy not only hides the client’s IP address but also does not identify itself as a proxy to the destination server. The server treats the request as if it came directly from a client, making this the most private form of proxy.
+
+Use Cases:
+High-level privacy and anonymity, typically for sensitive activities.
+Example:
+Elite proxy services used for completely anonymous web browsing without revealing that the request went through a proxy.
+SOCKS Proxy
+
+SOCKS (Socket Secure) proxy operates at a lower level of the networking stack and handles all types of traffic, including HTTP, FTP, and even email. SOCKS proxies are more flexible than HTTP proxies because they can handle any kind of data, not just web traffic.
+
+Use Cases:
+Handling non-HTTP traffic: Ideal for applications that don’t use HTTP, such as gaming, P2P file sharing, or email.
+Bypassing internet restrictions: SOCKS proxies can be used to access blocked content or avoid firewalls.
+Example:
+SOCKS5 proxies, which offer a more secure and reliable connection, can be used for torrenting or accessing blocked websites.
+Benefits of Using Proxies in System Design
+Improved Security:
+
+Proxies (especially reverse proxies) can hide internal infrastructure details from the outside world, providing an extra layer of security.
+Proxies can also inspect incoming and outgoing traffic to block malicious activities.
+Load Balancing:
+
+Reverse proxies can distribute client requests across multiple servers, ensuring that no single server is overwhelmed. This improves system performance and uptime.
+Caching:
+
+Both forward and reverse proxies can cache frequently requested data, reducing response times and decreasing the load on backend systems.
+Access Control and Monitoring:
+
+Proxies can be used to control which resources clients can access. They can also monitor traffic for analysis or compliance purposes.
+Performance Optimization:
+
+Proxies can compress responses, handle SSL termination, and apply optimizations that reduce latency and improve client-server communication speed.
+Challenges of Using Proxies
+Single Point of Failure:
+
+If the proxy server goes down, it can lead to system-wide failures since all client requests are dependent on the proxy for processing.
+Latency:
+
+Proxies introduce an additional hop in the network, which can slightly increase latency. However, this can be mitigated by proper caching and optimizations.
+Complexity:
+
+Adding proxies to a system adds complexity in terms of configuration, maintenance, and troubleshooting.
+SSL Handling:
+
+Managing SSL certificates through a proxy server (e.g., in reverse proxies) can be challenging, especially with auto-renewals or managing multiple domains.
+Popular Proxy Tools
+Nginx: Used as a reverse proxy, load balancer, and web server.
+HAProxy: Commonly used for load balancing and acting as a reverse proxy.
+Squid: A caching forward proxy for web traffic.
+Varnish: A high-performance caching reverse proxy designed for web applications.
+In system design, proxies help in improving performance, ensuring scalability, providing security, and enabling advanced features like caching and load balancing.
